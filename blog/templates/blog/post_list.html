@@ -1,6 +1,12 @@
+{% load static %}
+
 <html>
   <head>
     <title>자몽집사의 블로그</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin, latin-ext" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div>
@@ -8,23 +14,11 @@
     </div>
 
     {% for post in posts %}
-      <div>
-        <p>published: {{post.published_date}}</p>
-        <h1><a href="">{{post.title}}</a></h1>
-        <p>{{post.text|linebreaksbr}}</p>
-      </div>
+    <div>
+      <p>published: {{post.published_date}}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </div>
     {% endfor %}
-    
-    <div>
-      <p>published: 27.09.2019, 01:29</p>
-      <h2><a href="">My first post</a></h2>
-      <p>첫 포스트 테스트입니다.</p>
-    </div>
-
-    <div>
-      <p>published: 27.09.2019, 01:30</p>
-      <h2><a href="">My second post</a></h2>
-      <p>두번째 포스트 테스트</p>
-    </div>
   </body>
 </html>
